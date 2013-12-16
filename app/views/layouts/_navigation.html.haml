@@ -4,31 +4,15 @@
     %li
       = nav_link 'Pricing', new_user_registration_path
   %li
-    = nav_link 'Blog', 'http://blog.homebrewster.com'
+    = nav_link 'Blog', '#'
 
   %li
-    = nav_link 'FAQ', faq_path
+    = nav_link 'FAQ', "#"
 
 %ul.site-nav.pull-right
-  - if user_signed_in?
-    - if current_user.has_role? :admin
-      %li
-        = nav_link 'Admin', users_path, class: "discrete"
-        \|
-
-  - if current_user
-    %li
-      = nav_link 'Edit account', edit_user_registration_path, class: "discrete"
-      \|
-    %li
-      = nav_link 'Logout', destroy_user_session_path, class: "discrete", :method=>'delete'
-    %li
-      %strong
-        = link_to "Next Month's Recipe!", content_path, class: "btn btn-info btn-eye-catcher"
-  - else
-    %li
-      = nav_link 'Login', new_user_session_path, class: "discrete"
-    %li
-      %strong
-        = link_to 'Start Brewing Great Beer!', new_user_registration_path, class: "btn btn-danger btn-eye-catcher"
+  %li
+    = nav_link 'Login', new_user_session_path, class: "discrete"
+  %li
+    %strong
+      = link_to 'Reserve Your Spot!', new_user_registration_path, class: "btn btn-success btn-eye-catcher"
 

@@ -22,6 +22,8 @@ html, body {
   font-size: 16px;
 
   color: #333;
+
+  background-color: #f9f9f9;
 }
 
 /* Wrapper for page content to push down footer */
@@ -70,8 +72,10 @@ html, body {
 }
 
 .navbar{
+  border-bottom: 1px solid #eee;
+
   .navbar-inner{
-    background-color: #000;
+    background-color: #fff;
   }
 
   .pages-nav{
@@ -108,7 +112,7 @@ html, body {
 
       .btn-eye-catcher{
         margin: 15px 0;
-        padding: 13px 25px 15px;
+        padding: 13px 35px 15px;
         margin-left: 10px;
 
       }
@@ -134,6 +138,10 @@ html, body {
   vertical-align: top;
   width: 184px;
   height: 40px;
+}
+
+.btn-success{
+  background-color: #2eba68;
 }
 
 .alert{

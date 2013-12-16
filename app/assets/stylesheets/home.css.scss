@@ -52,24 +52,6 @@
   margin: 40px 0px 80px;
 }
 
-.header{
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 500px;
-  overflow: hidden;
-}
-
-.header_background{
-  position: absolute;
-  z-index: -999;
-  margin: auto;
-  min-height: 100%;
-  min-width: 1920px;
-  width: 100%;
-  height: auto;
-}
-
 @media screen and (max-width: 1920px) {
   .header_background{
     left: 50%;
@@ -103,42 +85,31 @@
   margin-left: -20px;
 }
 
-.navigation-container{
-  height: 100%;
-  background-color: rgba(0, 0, 0, .50);
-  color: white;
-  text-align: center;
-  padding: 30px 0;
+.header{
+  background: #ebebeb image-url("mega_header_bg.png") center bottom repeat-x;
 
-  h2{
-    margin-top: 107px;
-    font-size: 4em;
-    line-height: 1;
-    margin-bottom: 18px;
-  }
+  .navigation-container{
+    text-align: center;
+    padding: 30px 0;
 
-  .btn-large{
-    font-weight: bold;
-    font-size: 1.4em;
-    padding: 20px 40px 23px;
-  }
+    h2{
+      font-size: 2.5em;
+      line-height: 1;
+      font-weight: normal;
+    }
 
-  ul{
-    list-style: none;
-    margin: 0;
+    img{
+      margin: 30px 0px;
+    }
 
-    li{
-      display: inline-block;
-      margin: 0 13px;
-      font-size: 1.1em;
+    p.lead{
+      text-align: right;
+    }
 
-      a{
-        color: white;
-
-        &:hover{
-          text-decoration: underline;
-        }
-      }
+    .btn-large{
+      font-weight: bold;
+      font-size: 1.4em;
+      padding: 20px 40px 23px;
     }
   }
 }
