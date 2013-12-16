@@ -2,32 +2,23 @@
   .container
     .row
       .span8
-        %h2 Try new beer every 3 months!
-        %p.info HomeBrewster makes it easy for you to brew and try all kinds of beer! Every 3 months we will send you the ingredients for a new and unique recipe to brew.
+        %h2 Mobile Optimization
+        %p.info Customers are going more mobile everyday.  Over half of website traffic is now mobile.  Stay up-to-date with your customers and have a website that is made for mobile viewing.
       .span4.text-center
         %i.fa.fa-calendar.fa-huge
 
 .marketing-container
   .container
     .row
+      .span4.text-center
+        %i.fa.fa-lock.fa-huge
       .span8
         %h2 Privacy is important!
         %p.info We won't give your credit card or personal information to anyone for any reason.  You can trust that all of your information is secure.
-      .span4.text-center
-        %i.fa.fa-lock.fa-huge
-
-.marketing-container.light
-  .container
-    .row
-      .span8
-        %h2 What's included.
-        %p.info You will receive dry malt extract, hops, irish moss (if necessary) and dry brewer's yeast for a five gallon kit.  Additional spices and ingredients will also be included.
-      .span4.text-center
-        %i.fa.fa-truck.fa-huge
-
 .marketing-container
-  .container
-    .row
-      .span4.text-center.offset4
-        = link_to "Start Brewing Great Beer!", new_user_registration_path, class: "btn btn-large btn-block btn-info"
-
+  .container.call-to-action
+    .row-fluid
+      .span8
+        %p.lead A good, mobile optimized website gives your restaurant the internet presence it needs to bring in more customers.
+      .span4
+        = link_to "Reserve Your Spot!", new_user_registration_path, class: "btn btn-success btn-large"
