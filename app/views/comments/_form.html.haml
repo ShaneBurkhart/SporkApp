@@ -1,9 +1,0 @@
-= simple_form_for(@comment) do |f|
-  = f.error_notification
-
-  .row
-    .span8
-      = f.input :body, input_html: { rows: 3, class: "input-block-level" }
-
-  .form-actions
-    = f.button :submit
