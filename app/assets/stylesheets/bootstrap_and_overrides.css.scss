@@ -1,0 +1,17 @@
+@import "bootstrap";
+@import "flat-ui";
+@import "font-awesome";
+//@import "bootstrap-responsive";
+
+.muted{
+  color: #ccc;
+}
+
+.fa-huge{
+  font-size: 200px;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+  line-height: 1;
+  min-height: 39px;
+}

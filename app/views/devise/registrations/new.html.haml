@@ -1,0 +1,113 @@
+- content_for :title, "Sign Up"
+- content_for :head do
+  = tag :meta, :name => "stripe-key", content: ENV["STRIPE_PUBLIC_KEY"]
+
+.content.container
+  %h2 Sign Up
+  #stripe_error.alert.alert-error{:style => "display:none"}
+  .row
+    .span6
+      %h3 Personal Information
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'card_form form-vertical' }) do |f|
+        = hidden_field_tag :plan, "basic"
+        = f.error_notification
+        = display_base_errors resource
+        .row-fluid
+          .span6
+            = f.input :first_name, :autofocus => true, input_html: {class: "input-block-level"}
+          .span6
+            = f.input :last_name, input_html: {class: "input-block-level"}
+        .row-fluid
+          .span12
+            = f.input :email, :required => true, input_html: {class: "input-block-level"}
+        .row-fluid
+          .span6
+            = f.input :password, :required => true, input_html: {class: "input-block-level"}
+          .span6
+            = f.input :password_confirmation, :required => true, input_html: {class: "input-block-level"}
+
+        - if @user.stripe_token
+          %p Credit card acceptance is pending.
+        - else
+          %h3 Credit Card Information
+          .row-fluid
+            .span10
+              = label_tag :card_number, "Credit Card Number"
+              = text_field_tag :card_number, nil, name: nil, class: "input-block-level"
+            .span2
+              = label_tag :card_code, "CVV"
+              = text_field_tag :card_code, nil, name: nil, class: "input-block-level"
+          .row-fluid
+            .span12
+              = label_tag :card_month, "Card Expiration"
+              .row-fluid
+                .span6
+                  = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "input-block-level"}
+                .span6
+                  = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class: "input-block-level"}
+
+        %h3 Shipping Information
+        .row-fluid
+          .span12
+            = f.input :address, input_html: {class: "input-block-level"}
+        .row-fluid
+          .span4
+            = f.input :city, input_html: {class: "input-block-level"}
+          .span4
+            = f.input :state, input_html: {class: "input-block-level"}
+          .span4
+            = f.input :zipcode, input_html: {class: "input-block-level"}, label: "Postal Code"
+        .row-fluid
+          .span12
+            = f.input :country, as: :select, collection: ["USA"], input_html: {class: "input-block-level"}
+
+        %br
+
+        = f.hidden_field :stripe_token
+        .row-fluid
+          .span12
+            = f.button :submit, 'Sign Up', :class => "btn btn-primary btn-large btn-block"
+
+    .span6.text-right
+      .row-fluid
+        .span9.offset3
+          %h3 Recipe Schedule
+          %p January - Winter Stout
+          %p April - Hoppy IPA
+          %p July - Orange Peel Pilsner
+          %p October - Pumpkin Ale
+          %hr
+
+
+      .row-fluid
+        .span9.offset3
+          %h2 Price
+          %p
+            %span.dollar-desc 5 Gallon Malt Extract Beer Kit:
+            %span $35
+          %p
+            %span.dollar-desc Shipping:
+            %span $15
+          %hr
+          %p.lead
+            Total: $50
+          %hr
+
+
+      .row-fluid
+        .span9.offset3
+          %h3 What's Included
+          %p 5 gallon malt extract beer kit in January, April, July, and October.
+          %p We ship the third Monday of the month so you get it before the weekend.
+          %p Your card won't be charged until we ship.
+          %p Happy brewing!
+          %hr
+
+      .row-fluid
+        .span9.offset3
+          %h3
+            %i.fa.fa-lock
+            Your information is secure!
+          %p We won't give your credit card or personal information to anyone for any reason.  You can trust that all of your information is secure.
+          %hr
+

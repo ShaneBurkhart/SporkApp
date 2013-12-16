@@ -1,0 +1,144 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.dollar-desc{
+  padding-right: 20px;
+}
+
+.messages{
+  padding: 20px 0px 0px;
+}
+
+.marketing-container{
+  padding: 50px 0 60px;
+
+  h2{
+    font-size: 2em;
+    line-height: 1;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  p.info, li{
+    line-height: 1.5;
+  }
+
+  .btn-large{
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 20px 0 20px;
+  }
+
+  p.info{
+    margin-bottom: 20px;
+    font-size: 1.1em;
+  }
+
+  &.dark{
+    background-color: #444;
+    color: #fff;
+  }
+
+  &.light{
+    background-color: #f8f8f8;
+  }
+
+}
+
+.tag-line{
+  margin: 40px 0px 80px;
+}
+
+.header{
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 500px;
+  overflow: hidden;
+}
+
+.header_background{
+  position: absolute;
+  z-index: -999;
+  margin: auto;
+  min-height: 100%;
+  min-width: 1920px;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 1920px) {
+  .header_background{
+    left: 50%;
+    margin-left: -960px;
+  }
+}
+
+.huge-money{
+  font-size: 8em;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.shipping{
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.little-dollar-sign{
+  font-weight: bold;
+  font-size: 60px;
+  margin-right: -30px;
+}
+
+.little-pennies{
+  display: inline-block;
+  font-size: 30px;
+  vertical-align: top;
+  margin-top: 18px;
+  margin-left: -20px;
+}
+
+.navigation-container{
+  height: 100%;
+  background-color: rgba(0, 0, 0, .50);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+
+  h2{
+    margin-top: 107px;
+    font-size: 4em;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  .btn-large{
+    font-weight: bold;
+    font-size: 1.4em;
+    padding: 20px 40px 23px;
+  }
+
+  ul{
+    list-style: none;
+    margin: 0;
+
+    li{
+      display: inline-block;
+      margin: 0 13px;
+      font-size: 1.1em;
+
+      a{
+        color: white;
+
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

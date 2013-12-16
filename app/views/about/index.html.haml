@@ -1,0 +1,25 @@
+- content_for :title, "About Us"
+.container
+  .section
+    .container
+      %h2 The Team
+      %hr
+  .container
+    .row
+      .span3
+        = image_tag @shane_url, class: "gravatar"
+      .span9
+        %h3 Shane Burkhart
+        %p.lead.muted Co-Founder
+        %p Hi, my name is Shane Burkhart and I am a computer science major at the Missouri University of Science and Technology.  My goal is to use software and computers to solve as many real world problems as I can.  I am a passionate homebrewer, and love helping people in the community.  Whether you have questions, suggestions, or simply want to talk about brewing, email me and I will gladly respond. Cheers!
+    %hr
+
+  .container
+    .row
+      .span9
+        %h3 Ryan Endacott
+        %p.lead.muted Co-Founder
+        %p  Hi, I'm Ryan. I've been coding for a few years, working with everything from machine learning to countless web applications.  In short, I'm excited to be building HomeBrewster and can't wait to get some awesome recipes shipped to the brewing community. Have any questions, comments, concerns, or new ideas for HomeBrewster?  Feel free to shoot me an email. Cheers and happy brewing!
+      .span3
+        = image_tag @ryan_url, class: "gravatar"
+

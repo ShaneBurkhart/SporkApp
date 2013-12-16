@@ -1,0 +1,96 @@
+- content_for :title, "Edit Account"
+- content_for :head do
+  = tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY
+
+.content.container
+  %h1 Edit Account
+
+  #stripe_error.alert.alert-error{:style => "display:none"}
+
+  .row
+    .span7
+      %h3 Personal Information
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
+        = hidden_field_tag :plan, "basic"
+        = f.error_notification
+        = display_base_errors resource
+        .row-fluid
+          .span6
+            = f.input :first_name, :autofocus => true, input_html: {class: "input-block-level"}
+          .span6
+            = f.input :last_name, input_html: {class: "input-block-level"}
+        .row-fluid
+          .span12
+            = f.input :email, :required => true, input_html: {class: "input-block-level"}
+
+        %h3 Shipping Information
+        .row-fluid
+          .span12
+            = f.input :address, input_html: {class: "input-block-level"}
+        .row-fluid
+          .span4
+            = f.input :city, input_html: {class: "input-block-level"}
+          .span4
+            = f.input :state, input_html: {class: "input-block-level"}
+          .span4
+            = f.input :zipcode, input_html: {class: "input-block-level"}, label: "Postal Code"
+        .row-fluid
+          .span12
+            = f.input :country, as: :select, collection: ["USA"], input_html: {class: "input-block-level"}
+
+
+        %h3 Change Password
+        .row-fluid
+          .span6
+            = f.input :password, :required => true, input_html: {class: "input-block-level"}
+          .span6
+            = f.input :password_confirmation, :required => true, input_html: {class: "input-block-level"}
+
+        %h4 Confirm Changes
+        %p We need your current password to confirm your changes.
+        .row-fluid
+          .span6
+            = f.input :current_password, :required => true, input_html: {class: "input-block-level"}
+
+        .row-fluid
+          .span12
+            = f.button :submit, 'Update Account', :class => "btn btn-primary btn-large btn-block"
+
+
+
+    .span4.offset1
+      %h3 Card
+      %p
+        Using card ending with #{@user.last_4_digits}
+        %br
+        %a.btn{"data-toggle" => "modal", :href => "#card-data", :type => "button"} Change card
+      %h3 Cancel my account
+      %p
+        Unhappy?
+        %br
+        #{link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-danger'}
+
+
+  #card-data.modal{:style => "display: none;"}
+    = simple_form_for resource, :as => resource_name, :url => update_card_path, :html => {:method => :put, :class => 'form-horizontal card_form' } do |f|
+      .modal-header
+        %a.close{"data-dismiss" => "modal"} ×
+        %h3 Change Credit Card
+      .modal-body
+        .field
+          = label_tag :card_number, "Credit Card Number"
+          = text_field_tag :card_number, nil, name: nil
+        .field
+          = label_tag :card_code, "Card Security Code (CVV)"
+          = text_field_tag :card_code, nil, name: nil
+        .field
+          = label_tag :card_month, "Card Expiration"
+          = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}
+          = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year"}
+        = f.hidden_field :first_name
+        = f.hidden_field :last_name
+        = f.hidden_field :email
+        = f.hidden_field :stripe_token
+      .modal-footer
+        = f.submit "Change Credit Card", :class => "btn btn-primary"
+        %a.btn{"data-dismiss" => "modal", :href => "#"} Close

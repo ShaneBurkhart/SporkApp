@@ -1,0 +1,32 @@
+%h1 This Month's Recipe
+%h4.muted= @recipe.human_date
+.well.well-large.monthly-recipe
+  .row-fluid
+    .span7
+      %p.lead= @recipe.name
+      %p.desc= @recipe.description
+      %ul
+        %li= link_to "Instructions"
+        %li= link_to "Comments (0)", "#comments", class: "scroll"
+    .span5.text-center
+      = image_tag @recipe.image.url, class: "recipe-image"
+
+
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+\|
+= link_to 'Back', recipes_path
+
+#comments
+%h3= "Comments (#{@recipe.comments.count})"
+
+%hr
+
+- @recipe.comments.find(:all, order: "updated_at desc").each do |comment|
+  %p.lead
+    = "#{comment.user.first_name} -"
+    %span.muted
+      = time_ago_in_words comment.created_at
+      ago
+  %p= comment.body
+  %hr

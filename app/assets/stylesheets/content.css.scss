@@ -1,0 +1,50 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.monthly-recipe{
+
+  margin-bottom: 30px;
+
+  .lead{
+    font-size: 1.8em;
+  }
+
+  .desc{
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+
+  ul{
+    list-style: none;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-left: 0px;
+
+    li{
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+  .recipe-image{
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #ccc;
+    max-height: 100%;
+    max-width: 100% ;
+  }
+
+  .small-name{
+    vertical-align: center;
+  }
+}
+
+#comments{
+
+  margin-bottom: 60px;
+
+  .lead{
+    margin-bottom: 10px;
+    font-size: 1.3em;
+  }
+}

@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap_and_overrides
+ *= require_self
+ *= require_tree .
+*/
+
+/* Sticky footer styles
+      -------------------------------------------------- */
+
+html, body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  font-size: 16px;
+
+  color: #333;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -75px;
+  padding-top: 78px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+/* Set the fixed height of the footer here */
+#push, #footer {
+  height: 60px;
+}
+
+#footer {
+  padding-top: 15px;
+  color: #f3f3f3;
+  background-color: #333;
+  color: #fff;
+
+  ul{
+    list-style: none;
+    margin-left: 0px;
+    margin-top: 10px;
+
+    li{
+      display: inline-block;
+      margin-right: 15px;
+
+      a{
+        color: #ccc;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.content{
+  padding: 15px 0;
+}
+
+.navbar{
+  .navbar-inner{
+    background-color: #000;
+  }
+
+  .pages-nav{
+    margin-top: 28px;
+
+    li{
+      margin-right: 10px;
+
+      a{
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover{
+          color: #bbb;
+        }
+      }
+    }
+  }
+
+  .site-nav{
+    list-style: none;
+    margin-bottom: 0px;
+    display: inline-block;
+
+    li{
+      display: inline-block;
+
+      &.active{
+        a{
+          color: #e74c3c;
+        }
+      }
+
+      .btn-eye-catcher{
+        margin: 15px 0;
+        padding: 13px 25px 15px;
+        margin-left: 10px;
+
+      }
+
+      .discrete{
+        text-decoration: none;
+        color: #999;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.site-logo{
+  text-indent: -99999em;
+  background-image: image-url("site_logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  margin-top: 17px;
+  vertical-align: top;
+  width: 184px;
+  height: 40px;
+}
+
+.alert{
+  margin: 20px 0px;
+}

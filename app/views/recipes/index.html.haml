@@ -1,0 +1,30 @@
+%h1 Listing recipes
+
+.row
+  .span3
+    = link_to 'New Recipe', new_recipe_path, class: "btn btn-info"
+  .span9
+    = form_tag do
+      = submit_tag "Charge This Month's Recipe", class: "btn btn-danger pull-right", :data => { :confirm => "Are you sure you want to charge this month's recipe?" }
+
+%br
+%br
+
+%table.table
+  %tr
+    %th Name
+    %th Date
+    %th
+
+  - @recipes.each do |recipe|
+    %tr{class: recipe_class(recipe)}
+      %td= "#{recipe.name} (#{recipe.comments.count})"
+      %td= recipe.human_date
+      %td
+        .nav
+          = link_to 'Show', recipe
+          \|
+          = link_to 'Edit', edit_recipe_path(recipe)
+          \|
+          = link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
