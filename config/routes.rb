@@ -1,4 +1,4 @@
-Beerocity::Application.routes.draw do
+Spork::Application.routes.draw do
 
   mount StripeEvent::Engine => '/stripe'
 

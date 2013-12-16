@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Beerocity::Application.load_tasks
+Spork::Application.load_tasks

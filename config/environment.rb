@@ -12,4 +12,4 @@ ActionMailer::Base.smtp_settings = {
 }
 
 # Initialize the rails application
-Beerocity::Application.initialize!
+Spork::Application.initialize!
