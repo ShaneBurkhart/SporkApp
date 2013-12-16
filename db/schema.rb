@@ -11,30 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131104210923) do
-
-  create_table "comments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "recipe_id"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "recipes", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.integer  "month"
-    t.integer  "year"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.boolean  "is_charged"
-    t.integer  "deadline"
-  end
+ActiveRecord::Schema.define(:version => 20131023224026) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -64,11 +41,6 @@ ActiveRecord::Schema.define(:version => 20131104210923) do
     t.string   "last_4_digits"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "address"
-    t.string   "zipcode"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
