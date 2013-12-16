@@ -46,21 +46,6 @@
                 .span6
                   = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class: "input-block-level"}
 
-        %h3 Shipping Information
-        .row-fluid
-          .span12
-            = f.input :address, input_html: {class: "input-block-level"}
-        .row-fluid
-          .span4
-            = f.input :city, input_html: {class: "input-block-level"}
-          .span4
-            = f.input :state, input_html: {class: "input-block-level"}
-          .span4
-            = f.input :zipcode, input_html: {class: "input-block-level"}, label: "Postal Code"
-        .row-fluid
-          .span12
-            = f.input :country, as: :select, collection: ["USA"], input_html: {class: "input-block-level"}
-
         %br
 
         = f.hidden_field :stripe_token
