@@ -1,10 +1,11 @@
 .header
   .navigation-container
-    %h2 Build your website quickly, easily, and affordably.
+    %h1 Dead simple business website builder.
     = image_tag "device_art.png"
-    .container.call-to-action
+    .container
       .row-fluid
-        .span8
-          %p.lead A good, mobile optimized website gives your restaurant the internet presence it needs to bring in more customers.
-        .span4
-          = link_to "Reserve Your Spot!", new_user_registration_path, class: "btn btn-success btn-large"
+        .span10.text-center.offset1
+          %p.lead A good, mobile optimized website gives your business the internet presence it needs.
+          = simple_form_for @user, url: user_registration_path, html: {class: "form-inline"} do |f|
+            = f.input_field :email, class: "input-large", placeholder: "Email", pattern: ".+", minLength: 1
+            = f.button :submit, "Reserve Your Spot!", class: "btn btn-success btn-large"
