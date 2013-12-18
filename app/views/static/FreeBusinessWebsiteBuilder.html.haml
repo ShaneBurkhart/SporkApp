@@ -1,2 +1,24 @@
-%p
-  Hello world
+.marketing-container.light#about
+.container
+  .row
+    .span8
+      %h2 Mobile Optimization
+      %p.info Customers are going more mobile everyday.  Over half of website traffic is now mobile.  Stay up-to-date with your customers and have a website that is made for mobile viewing.
+    .span4.text-center
+      %i.fa.fa-calendar.fa-huge
+
+.marketing-container
+.container
+  .row
+    .span4.text-center
+      %i.fa.fa-lock.fa-huge
+    .span8
+      %h2 Privacy is important!
+      %p.info We won't give your credit card or personal information to anyone for any reason.  You can trust that all of your information is secure.
+.marketing-container
+.container.call-to-action
+  .row-fluid
+    .span8
+      %p.lead A good, mobile optimized website gives your restaurant the internet presence it needs to bring in more customers.
+    .span4
+      = link_to "Reserve Your Spot!", new_user_registration_path, class: "btn btn-success btn-large"
